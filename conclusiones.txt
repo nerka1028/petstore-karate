@@ -1,0 +1,29 @@
+1. Cobertura de pruebas
+   - Se implementaron y validaron todos los escenarios solicitados:
+     * Creación de una nueva mascota (POST /pet).
+     * Consulta de la mascota creada por ID (GET /pet/{id}).
+     * Actualización del nombre y estado de la mascota a "sold" (PUT /pet).
+     * Consulta de mascotas por estado y validación mediante filtrado del ID (GET /pet/findByStatus).
+
+2. Hallazgos
+   - La API pública de PetStore puede presentar inconsistencias debido a que es un entorno de demostración.
+   - El endpoint /pet/findByStatus no siempre refleja de inmediato los cambios hechos con PUT o POST.
+   - La verificación más confiable del estado de la mascota se obtiene con GET /pet/{id}.
+
+3. Confiabilidad de los endpoints
+   - POST /pet funcionan de manera confiable para crear y actualizar registros.
+   - GET /pet/{id} es el método más consistente para verificar la información actualizada.
+   - GET /pet/findByStatus puede no mostrar siempre la mascota recientemente actualizada, lo cual se documentó como limitación.
+
+4. Ventajas de usar Karate
+   - Sintaxis clara basada en Gherkin, que facilita la comprensión de los casos de prueba.
+   - Generación automática de reportes HTML con detalle de requests y responses.
+
+5. Recomendaciones
+   - En proyectos reales no depender exclusivamente de /findByStatus para validaciones críticas.
+   - Complementar siempre con GET /pet/{id} para confirmar cambios de estado o datos.
+   - Documentar las limitaciones de la API pública para evitar interpretar como errores de pruebas lo que son fallas del sandbox.
+
+6. Resultado final
+   - El ejercicio demuestra exitosamente la automatización de pruebas de servicios REST con Karate.
+   - El proyecto es reproducible, contiene instrucciones claras en el readme.txt y un reporte con hallazgos y conclusiones en este documento.
