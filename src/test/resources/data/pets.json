@@ -1,0 +1,18 @@
+{
+  "id": 108937951,
+  "category": {
+    "id": 0,
+    "name": "string"
+  },
+  "name": "karenTest",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}
